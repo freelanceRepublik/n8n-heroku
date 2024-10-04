@@ -1,13 +1,21 @@
-# n8n-heroku
+# frk-n8n
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/n8n-io/n8n-heroku/tree/main)
+Configuration n8n pour les services frk-n8n-staging et frk-n8n-production
 
-## n8n - Free and open fair-code licensed node based Workflow Automation Tool.
+## Installation initiale
 
-This is a [Heroku](https://heroku.com/)-focused container implementation of [n8n](https://n8n.io/).
+heroku git:remote -a frk-n8n-staging -r frk-n8n-staging
+heroku git:remote -a frk-n8n-production -r frk-n8n-production
+git push --set-upstream frk-n8n-staging main
+git push --set-upstream frk-n8n-production main
 
-Use the **Deploy to Heroku** button above to launch n8n on Heroku. When deploying, make sure to check all configuration options and adjust them to your needs. It's especially important to set `N8N_ENCRYPTION_KEY` to a random secure value. 
+## Update
 
-Refer to the [Heroku n8n tutorial](https://docs.n8n.io/hosting/server-setups/heroku/) for more information.
+Principe : forcer un rebuild du Dockerfile
 
-If you have questions after trying the tutorials, check out the [forums](https://community.n8n.io/).
+```
+git commit --allow-empty -m "Update to latest version"
+git push frk-n8n-staging main
+```
+
+Ref : https://help.heroku.com/18PI5RSY/how-do-i-clear-the-build-cache
