@@ -4,10 +4,12 @@ Configuration n8n pour les services frk-n8n-staging et frk-n8n-production
 
 ## Installation initiale
 
+```
 heroku git:remote -a frk-n8n-staging -r frk-n8n-staging
 heroku git:remote -a frk-n8n-production -r frk-n8n-production
 git push --set-upstream frk-n8n-staging main
 git push --set-upstream frk-n8n-production main
+```
 
 ## Update
 
